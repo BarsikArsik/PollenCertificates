@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сертификаты на таблетки палинологические</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #005b96;
+      color: white;
+      padding: 20px 10px;
+      font-size: 1.4em;
+    }
+    main {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    a.file-link {
+      display: block;
+      padding: 12px 0;
+      margin: 6px 0;
+      text-decoration: none;
+      color: #005b96;
+      font-weight: 500;
+      border-bottom: 1px solid #ddd;
+    }
+    a.file-link:hover {
+      color: #0088cc;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>Сертификаты на таблетки палинологические</header>
+
+  <main id="file-list">
+    <p>Загрузка списка файлов...</p>
+  </main>
+
+  <footer>
+    Контактные данные: <a href="mailto:galimov_at@ipae.uran.ru">galimov_at@ipae.uran.ru</a>
+	<a>Галимов Арсений</a>
+  </footer>
+
+  <script>
+    // Автоматически получает список PDF-файлов из репозитория GitHub Pages
+    const repo = 'https://yourusername.github.io/'; // замените на адрес вашего репозитория
+
+    // Вручную добавьте сюда список файлов (проще всего)
+    const files = [
+      'cert003.pdf'
+      
+    ];
+
+    const listContainer = document.getElementById('file-list');
+    listContainer.innerHTML = '';
+    files.forEach(file => {
+      const link = document.createElement('a');
+      link.href = file;
+      link.textContent = file.replace(/_/g, ' ');
+      link.className = 'file-link';
+      link.target = '_blank';
+      listContainer.appendChild(link);
+    });
+  </script>
+</body>
+</html>

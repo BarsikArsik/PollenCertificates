@@ -35,6 +35,44 @@
     a.file-link:hover {
       color: #0088cc;
     }
+    /* Цитирование */
+    .citation {
+      margin: 20px auto;
+      max-width: 600px;
+      font-size: 0.9em;
+      color: #333;
+      line-height: 1.5em;
+      text-align: left;
+    }
+    .citation-label {
+      font-weight: bold; /* жирное выделение текста "Ссылка для цитирования:" */
+    }
+    .citation a {
+      color: #005b96;
+      text-decoration: none;
+    }
+    .citation a:hover {
+      color: #0088cc;
+    }
+    /* Блок программы */
+    .program-block {
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 15px 20px;
+      background-color: #eef6fb;  /* светлый фон */
+      border-left: 4px solid #005b96; /* акцентная полоса */
+      font-size: 0.9em;
+      line-height: 1.5em;
+      text-align: left;
+      box-sizing: border-box;
+    }
+    .program-block a {
+      color: #005b96;
+      text-decoration: none;
+    }
+    .program-block a:hover {
+      color: #0088cc;
+    }
     footer {
       margin-top: 60px;
       font-size: 0.9em;
@@ -49,19 +87,28 @@
     <p>Загрузка списка файлов...</p>
   </main>
 
+  <!-- Цитирование -->
+  <div class="citation">
+    <span class="citation-label">Ссылка для цитирования:</span> Галимов А. Т. Изготовление стандарта для метода абсолютных концентраций в спорово-пыльцевом анализе с использованием искусственного интеллекта // 
+    <em>Turczaninowia, 2025</em>. Т. 28, № 1. С. 28-34 DOI: 10.14258/turczaninowia.28.1.3. URL: 
+    <a href="https://turczaninowia.asu.ru/article/view/17065" target="_blank">https://turczaninowia.asu.ru/article/view/17065</a>
+  </div>
+
+  <!-- Блок программы -->
+  <div class="program-block">
+    Виртуальный счетчик клеток для ПК: 
+    <a href="https://github.com/BarsikArsik/ArsCounter" target="_blank">https://github.com/BarsikArsik/ArsCounter</a>
+  </div>
+
   <footer>
     Контактные данные: <a href="mailto:galimov_at@ipae.uran.ru">galimov_at@ipae.uran.ru</a>
-	<a>Галимов Арсений</a>
+    <a>Галимов Арсений</a>
   </footer>
 
   <script>
-    // Автоматически получает список PDF-файлов из репозитория GitHub Pages
-    const repo = 'https://yourusername.github.io/'; // замените на адрес вашего репозитория
-
-    // Вручную добавьте сюда список файлов (проще всего)
+    // Вручную добавьте сюда список файлов
     const files = [
       'cert003.pdf'
-      
     ];
 
     const listContainer = document.getElementById('file-list');

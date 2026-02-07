@@ -25,15 +25,24 @@
     }
     a.file-link {
       display: block;
-      padding: 12px 0;
-      margin: 6px 0;
+      padding: 15px 20px;
+      margin: 10px 0;
       text-decoration: none;
-      color: #005b96;
-      font-weight: 500;
-      border-bottom: 1px solid #ddd;
+      color: white;
+      font-weight: 600;
+      background-color: #005b96;
+      border: 2px solid #005b96;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,91,150,0.3);
     }
     a.file-link:hover {
-      color: #0088cc;
+      background-color: #0088cc;
+      border-color: #0088cc;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,91,150,0.4);
     }
     /* Цитирование */
     .citation {
@@ -45,7 +54,7 @@
       text-align: left;
     }
     .citation-label {
-      font-weight: bold; /* жирное выделение текста "Ссылка для цитирования:" */
+      font-weight: bold;
     }
     .citation a {
       color: #005b96;
@@ -59,8 +68,8 @@
       margin: 30px auto;
       max-width: 600px;
       padding: 15px 20px;
-      background-color: #eef6fb;  /* светлый фон */
-      border-left: 4px solid #005b96; /* акцентная полоса */
+      background-color: #eef6fb;
+      border-left: 4px solid #005b96;
       font-size: 0.9em;
       line-height: 1.5em;
       text-align: left;
@@ -94,9 +103,9 @@
     <a href="https://turczaninowia.asu.ru/article/view/17065" target="_blank">https://turczaninowia.asu.ru/article/view/17065</a>
   </div>
 
-  <!-- Новый раздел о патенте -->
+  <!-- Патент -->
   <div class="citation">
-    <span class="citation-label">Патент:</span> ИЗ №2855013. На процедуру изготовления получен и поддерживается патент, доступен по ссылке: 
+    <span class="citation-label">Патент: ИЗ №2855013.</span> На процедуру изготовления получен и поддерживается патент, доступен по ссылке: 
     <a href="https://www.fips.ru/registers-doc-view/fips_servlet?DB=RUPAT&DocNumber=2855013&TypeFile=html" target="_blank">https://www.fips.ru/registers-doc-view/fips_servlet?DB=RUPAT&DocNumber=2855013&TypeFile=html</a>
   </div>
 
@@ -112,17 +121,18 @@
   </footer>
 
   <script>
-    // Вручную добавьте сюда список файлов
+    // Список файлов: объект с filename (для href) и displayName (для отображения)
     const files = [
-      'cert003.pdf'
+      { filename: 'cert003.pdf', displayName: 'Сертификат на партию №3' },
+      { filename: 'cert004.pdf', displayName: 'Сертификат на партию №4' }
     ];
 
     const listContainer = document.getElementById('file-list');
     listContainer.innerHTML = '';
     files.forEach(file => {
       const link = document.createElement('a');
-      link.href = file;
-      link.textContent = file.replace(/_/g, ' ');
+      link.href = file.filename;
+      link.textContent = file.displayName;
       link.className = 'file-link';
       link.target = '_blank';
       listContainer.appendChild(link);
